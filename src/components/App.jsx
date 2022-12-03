@@ -31,7 +31,7 @@ export class App extends Component {
 
   deleteContact = contactId => {
     this.setState(prevState => ({
-    contacts : prevState.contacts.fiter(contact => contact.id !== contactId)
+    contacts : prevState.contacts.filter(contact => contact.id !== contactId)
   }))
 }
 
