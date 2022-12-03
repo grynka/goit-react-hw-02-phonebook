@@ -1,4 +1,5 @@
 import React from "react"
+import { Button } from "./ContactList.styled";
  
 const ContactList = ({ contacts, onClick }) => {
   return (
@@ -7,7 +8,7 @@ const ContactList = ({ contacts, onClick }) => {
         <li key={id}>
           <p>
             {name}: {number}{' '}
-            <button onClick={() => onClick(id)}>delete</button>
+            <Button onClick={() => onClick(id)}>delete</Button>
           </p>
         </li>
       ))}
