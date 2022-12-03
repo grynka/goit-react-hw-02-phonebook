@@ -11,8 +11,10 @@ export class App extends Component {
   };
 
   formSubmitHandler = data => {
-    console.log(data)
-   this.setState({
+    if (this.state.contacts.includes(data.name)) {
+      console.log(data.name);
+    }
+     this.setState({
      contacts: [
      ...this.state.contacts, data],
    });
