@@ -11,13 +11,14 @@ export class App extends Component {
   };
 
   formSubmitHandler = data => {
-    if (this.state.contacts.includes(data.name)) {
-      console.log(data.name);
-    }
-     this.setState({
-     contacts: [
-     ...this.state.contacts, data],
-   });
+    console.log(this.state.contacts)
+    const contactsName = (this.state.contacts.map(contact => contact.name))
+    if (contactsName.includes(data.name)) {
+      alert(data.name + ' is allready in contact');
+    } else
+      this.setState({
+        contacts: [...this.state.contacts, data],
+      });
     }
   
   deleteContact = contactId => {
