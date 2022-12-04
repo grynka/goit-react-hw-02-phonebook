@@ -11,7 +11,6 @@ export class App extends Component {
   };
 
   formSubmitHandler = data => {
-    console.log(this.state.contacts)
     const contactsName = (this.state.contacts.map(contact => contact.name))
     if (contactsName.includes(data.name)) {
       alert(data.name + ' is allready in contact');

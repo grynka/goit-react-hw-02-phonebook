@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import { nanoid } from "nanoid";
 import { Label, Input, Forms, Button } from './ContactForm.styled';
+import PropTypes from 'prop-types';
+
  
-class Form extends Component {
+class ContactForm extends Component {
     state = {
       name: '',
       number: '',
@@ -10,7 +12,6 @@ class Form extends Component {
     handleChange = event => {
     const { name, value } = event.currentTarget;
     this.setState({ [name]: value });
-    console.log(name, this.state[name]);
   };
 
   handleContactsCreate = event => {
@@ -66,4 +67,8 @@ class Form extends Component {
     }
   }
 
-    export default Form
+export default ContactForm
+    
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
